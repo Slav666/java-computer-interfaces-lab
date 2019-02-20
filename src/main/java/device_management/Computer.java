@@ -37,8 +37,8 @@ public class Computer {
         this.outputDevice = outputDevice;
     }
 
-    public IInput getInputDevice(IInput inputDevice){
-        return this.inputDevice = inputDevice;
+    public IInput getInputDevice(){
+        return this.inputDevice;
     }
 
     public void setInputDevice(IInput inputDevice){

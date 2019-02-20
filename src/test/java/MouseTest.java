@@ -29,7 +29,7 @@ public class MouseTest {
     }
 
     @Test
-    public void canReceiveData(){
+    public void canSendData(){
         assertEquals("beep beep", mouse.sendData());
     }
 

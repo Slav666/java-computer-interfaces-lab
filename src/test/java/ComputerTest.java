@@ -68,7 +68,7 @@ public class ComputerTest {
 
     @Test
     public void hasInputDevice(){
-        assertEquals(mouse, computer.getInputDevice(mouse));
+        assertEquals(mouse, computer.getInputDevice());
     }
 
     @Test
