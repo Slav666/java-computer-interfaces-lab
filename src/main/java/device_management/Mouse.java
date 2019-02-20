@@ -26,6 +26,6 @@ public class Mouse implements IInput {
 
     @Override
     public String sendData() {
-        return "I am sending data beep beep";
+        return "beep beep";
     }
 }

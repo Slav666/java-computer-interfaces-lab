@@ -30,7 +30,7 @@ public class MouseTest {
 
     @Test
     public void canReceiveData(){
-        assertEquals("I am sending data beep beep", mouse.sendData());
+        assertEquals("beep beep", mouse.sendData());
     }
 
 

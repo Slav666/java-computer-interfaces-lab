@@ -25,7 +25,7 @@ public class KeyboardTest {
 
     @Test
     public void canReceiveData(){
-        assertEquals("I am sending data click click", keyboard.sendData());
+        assertEquals("click click", keyboard.sendData());
     }
 
 }

@@ -1,17 +1,20 @@
 package device_management;
 
 import behaviours.IOutput;
+import behaviours.IInput;
 
 public class Computer {
     private int ram;
     private int hddSize;
 
     private IOutput outputDevice;
+    private IInput inputDevice;
 
-    public Computer(int ram, int hddSize, IOutput outputDevice) {
+    public Computer(int ram, int hddSize, IOutput outputDevice, IInput inputDevice) {
         this.ram = ram;
         this.hddSize = hddSize;
         this.outputDevice = outputDevice;
+        this.inputDevice = inputDevice;
     }
 
     public int getRam() {
@@ -33,4 +36,19 @@ public class Computer {
     public void setOutputDevice(IOutput outputDevice){
         this.outputDevice = outputDevice;
     }
+
+    public IInput getInputDevice(IInput inputDevice){
+        return this.inputDevice = inputDevice;
+    }
+
+    public void setInputDevice(IInput inputDevice){
+        this.inputDevice = inputDevice;
+    }
+
+    public String receiveData(IInput inputDevice){
+        String receivedData = inputDevice.sendData();
+        return "I am receiving data: " + receivedData;
+    }
+
+
 }

@@ -26,6 +26,6 @@ public class Keyboard implements IInput {
 
     @Override
     public String sendData() {
-        return "I am sending data click click";
+        return "click click";
     }
 }

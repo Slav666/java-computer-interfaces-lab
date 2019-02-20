@@ -1,8 +1,5 @@
 import behaviours.IOutput;
-import device_management.Computer;
-import device_management.Monitor;
-import device_management.Printer;
-import device_management.Speaker;
+import device_management.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,11 +9,13 @@ import static org.junit.Assert.assertEquals;
 public class ComputerTest {
     Computer computer;
     Monitor monitor;
+    Mouse mouse;
 
     @Before
     public void before() {
         monitor = new Monitor(22, 786432);
-        computer = new Computer(8, 512, monitor);
+        mouse = new Mouse("Le Crunch", false);
+        computer = new Computer(8, 512, monitor, mouse);
     }
 
     @Test
@@ -49,14 +48,14 @@ public class ComputerTest {
     @Test
     public void canOutputDataViaPrinter(){
         Printer printer = new Printer("Epson", "Stylus", 120, 4);
-        Computer computer = new Computer(8, 512, printer);
+        Computer computer = new Computer(8, 512, printer, mouse);
         assertEquals("printing: space invaders", computer.outputData("space invaders"));
     }
 
     @Test
     public void canOutputDataViaSpeaker(){
         Speaker speaker = new Speaker(100);
-        Computer computer = new Computer(8, 512, speaker);
+        Computer computer = new Computer(8, 512, speaker, mouse);
         assertEquals("playing: Beep!", computer.outputData("Beep!"));
     }
 
@@ -65,6 +64,18 @@ public class ComputerTest {
         Printer printer = new Printer("Epson", "Stylus", 120, 4);
         computer.setOutputDevice(printer);
         assertEquals("printing: space invaders", computer.outputData("space invaders"));
+    }
+
+    @Test
+    public void hasInputDevice(){
+        assertEquals(mouse, computer.getInputDevice(mouse));
+    }
+
+    @Test
+    public void canSetInputDevice(){
+        Keyboard keyboard = new Keyboard("English", 200);
+        computer.setInputDevice(keyboard);
+        assertEquals("I am receiving data: click click", computer.receiveData(keyboard));
     }
 
 }
