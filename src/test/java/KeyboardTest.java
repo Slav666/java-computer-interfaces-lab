@@ -23,4 +23,9 @@ public class KeyboardTest {
         assertEquals(100, keyboard.getNumberOfKeys());
     }
 
+    @Test
+    public void canReceiveData(){
+        assertEquals("I am sending data click click", keyboard.sendData());
+    }
+
 }

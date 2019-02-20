@@ -1,6 +1,8 @@
 package device_management;
 
-public class Keyboard {
+import behaviours.IInput;
+
+public class Keyboard implements IInput {
 
     private String language;
     private int numberOfKeys;
@@ -20,5 +22,10 @@ public class Keyboard {
 
     public String type(){
         return "I am typing";
+    }
+
+    @Override
+    public String sendData() {
+        return "I am sending data click click";
     }
 }

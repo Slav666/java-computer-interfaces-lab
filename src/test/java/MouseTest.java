@@ -28,5 +28,10 @@ public class MouseTest {
         assertEquals("I am clicking", mouse.click());
     }
 
+    @Test
+    public void canReceiveData(){
+        assertEquals("I am sending data beep beep", mouse.sendData());
+    }
+
 
 }

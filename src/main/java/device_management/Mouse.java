@@ -1,6 +1,8 @@
 package device_management;
 
-public class Mouse {
+import behaviours.IInput;
+
+public class Mouse implements IInput {
 
     private String type;
     private boolean laser;
@@ -20,5 +22,10 @@ public class Mouse {
 
     public String click(){
         return "I am clicking";
+    }
+
+    @Override
+    public String sendData() {
+        return "I am sending data beep beep";
     }
 }
