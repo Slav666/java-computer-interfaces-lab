@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class MouseTest {
 
     Mouse mouse;
-    
+
     @Before
     public void before(){
         mouse = new Mouse("white magic racer", true);
@@ -22,5 +22,11 @@ public class MouseTest {
     public void hasLaser(){
         assertEquals(true, mouse.getLaser());
     }
+
+    @Test
+    public void canClick(){
+        assertEquals("I am clicking", mouse.click());
+    }
+
 
 }

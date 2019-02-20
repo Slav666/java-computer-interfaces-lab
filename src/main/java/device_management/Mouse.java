@@ -17,4 +17,8 @@ public class Mouse {
     public boolean getLaser() {
         return this.laser;
     }
+
+    public String click(){
+        return "I am clicking";
+    }
 }
